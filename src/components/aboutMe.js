@@ -4,12 +4,14 @@ import itsMe from '../images/itsMe.jpg';
 
 function AboutMe() {
     return (
-        <div className="AboutMe">
+        <div className="AboutMe__container">
 
             <p className="AboutMe__slide">
                 Welcome to galengoforth.com!
             </p>
-            <img src={itsMe} className="itsMe" alt="logo" />
+            <div className="AboutMe">
+                <img src={itsMe} className="itsMe" alt="logo" />
+            </div>
         </div>
     );
 }

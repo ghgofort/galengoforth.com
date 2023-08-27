@@ -1,4 +1,11 @@
 .AboutMe {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.AboutMe__container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -6,20 +13,27 @@
     height: 100vh;
     padding: 0 20px;
     text-align: center;
+    background-color: transparent;
 }
 
 @media (prefers-reduced-motion: no-preference) {
     .AboutMe::after {
-        content: "-x-";
+        content: "";
         animation: about-me-background-spin infinite 20s linear;
+        border-bottom: #61dafb solid 2px;
+        width: 300px;
+        margin-top: -50%;
+        z-index: 1;
     }
 }
 
 .itsMe {
-    width: auto;
+    width: 200px;
     height: 300px;
     border-radius: 50%;
     margin-bottom: 20px;
+    background: transparent;
+    z-index: 2;
 }
 
 
