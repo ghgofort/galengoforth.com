@@ -1,76 +1,162 @@
 .AboutMe {
     align-items: center;
+    background-color: #282c34;
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
     width: 100%;
+    height: 100%;
+}
+
+.AboutMe__slide {
+    color: #66aaff;
+    font-size: calc(10px + 2vmin);
+    padding-top: 2rem;
+}
+
+.AboutMe__component {
+    background-color: transparent;
+    font-size: 16pt;
+    height: 35vh;
+    width: 75%;
 }
 
 .AboutMe__container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    height: 100vh;
-    padding: 0 20px;
-    text-align: center;
     background-color: transparent;
+    border-top: 4px solid #66aaff;
+    color: #282c34;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 35vh;
+    padding-top: 2rem;
+    text-align: center;
+    width: 100%;
 }
 
-
-.AboutMe::after {
-    border: #61dafb solid 10px;
+.AboutMe__container::after {
+    position: absolute;
+    border: #dd77ff solid 3px;
     border-radius: 50%;
     content: "";
-    height: 200px;
-    margin-top: -50%;
-    width: 200px;
+    height: 150px;
+    margin-right: 0;
+    margin-top: 20%;
+    opacity: .5;
+    width: 150px;
+    z-index: 1;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .AboutMe__container::after {
+        animation: oval-spin-2 infinite 3s linear;
+    }
+}
+
+.AboutMe::after {
+    border: #00ffcc solid 5px;
+    border-radius: 50%;
+    content: "";
+    height: 150px;
+    margin-right: -50%;
+    margin-top: 50%;
+    opacity: .5;
+    width: 150px;
     z-index: 1;
 }
 
 @media (prefers-reduced-motion: no-preference) {
     .AboutMe::after {
-        animation: oval-spin infinite 5s linear;
+        animation: oval-spin infinite 4s linear;
     }
 }
 
 .itsMe {
     width: 200px;
-    height: 300px;
+    height: 250px;
+    background: linear-gradient(to right, #4397ec, #22f211) no-repeat center;
+    padding: 5px;
     border-radius: 50%;
     margin: 0;
-    background: transparent;
     z-index: 2;
 }
 
 @keyframes oval-spin {
     0% {
-        border-width: 10px;
-        height: 200px;
+        border-color: #00ffcc;
+        border-width: 5px;
+        height: 150px;
+        margin-right: 50%;
+        margin-top: -50%;
         transform: rotate(0deg);
-        width: 200px;
     }
     25% {
-        border-width: 2px;
-        height: 0;
-        transform: rotate(90deg);
-        width: 400px;
+        border-color: #dd77ff;
+        border-width: 7px;
+        height: 75px;
+        margin-right: 0;
+        margin-top: 0;
+        transform: rotate(180deg);
     }
     50% {
-        border-width: 10px;
-        height: 200px;
-        transform: rotate(180deg);
-        width: 200px;
+        border-color: #ff00ff;
+        border-width: 5px;
+        height: 0;
+        margin-right: -50%;
+        margin-top: 0;
+        transform: rotate(360deg);
     }
     75% {
-        border-width: 2px;
-        height: 400px;
-        transform: rotate(270deg);
-        width: 0;
+        border-color: #dd77ff;
+        border-width: 7px;
+        height: 75px;
+        margin-right: 0;
+        margin-top: 0;
+        transform: rotate(540deg);
     }
     100% {
-        border-width: 10px;
-        height: 200px;
-        transform: rotate(360deg);
-        width: 200px;
+        border-color: #00ffcc;
+        border-width: 5px;
+        height: 150px;
+        margin-right: 50%;
+        margin-top: -50%;
+        transform: rotate(720deg);
+    }
+}
+
+@keyframes oval-spin-2 {
+    0% {
+        border-color: #dd77ff;
+        border-width: 3px;
+        margin-right: 0;
+        margin-top: 20%;
+        transform: rotate3d(0, 1, 1, 0deg);
+    }
+    25% {
+        border-width: 5px;
+        margin-right: -50%;
+        margin-top: 10%;
+        transform: rotate3d(0, 1, 1, 180deg);
+    }
+    50% {
+        border-color: #77eecc;
+        border-width: 7px;
+        margin-right: 0;
+        margin-top: 0;
+        transform: rotate3d(0, 1, 1, 360deg);
+    }
+    75% {
+        border-width: 5px;
+        margin-right: 50%;
+        margin-top: 10%;
+        transform: rotate3d(0, 1, 1, 540deg);
+    }
+    100% {
+        border-color: #dd77ff;
+        border-width: 3px;
+        margin-right: 0;
+        margin-top: 20%;
+        transform: rotate3d(0, 1, 1, 720deg);
     }
 }
