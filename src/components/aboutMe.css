@@ -1,0 +1,76 @@
+.AboutMe {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.AboutMe__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+    padding: 0 20px;
+    text-align: center;
+    background-color: transparent;
+}
+
+
+.AboutMe::after {
+    border: #61dafb solid 10px;
+    border-radius: 50%;
+    content: "";
+    height: 200px;
+    margin-top: -50%;
+    width: 200px;
+    z-index: 1;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .AboutMe::after {
+        animation: oval-spin infinite 5s linear;
+    }
+}
+
+.itsMe {
+    width: 200px;
+    height: 300px;
+    border-radius: 50%;
+    margin: 0;
+    background: transparent;
+    z-index: 2;
+}
+
+@keyframes oval-spin {
+    0% {
+        border-width: 10px;
+        height: 200px;
+        transform: rotate(0deg);
+        width: 200px;
+    }
+    25% {
+        border-width: 2px;
+        height: 0;
+        transform: rotate(90deg);
+        width: 400px;
+    }
+    50% {
+        border-width: 10px;
+        height: 200px;
+        transform: rotate(180deg);
+        width: 200px;
+    }
+    75% {
+        border-width: 2px;
+        height: 400px;
+        transform: rotate(270deg);
+        width: 0;
+    }
+    100% {
+        border-width: 10px;
+        height: 200px;
+        transform: rotate(360deg);
+        width: 200px;
+    }
+}
