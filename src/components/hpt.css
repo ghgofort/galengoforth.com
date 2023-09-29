@@ -1,0 +1,16 @@
+.hpt__component {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 50%;
+    & h4 {
+        color: #61dafb;
+    }
+}
+
+.hpt__slide {
+    margin: 0;
+    line-height: 1em;
+    font-size: 11pt;
+}

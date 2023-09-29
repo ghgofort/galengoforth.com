@@ -1,13 +1,13 @@
 import AboutMe from './components/aboutMe';
-import logo from './logo.svg';
 import './App.css';
+import HPT from './components/hpt';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <AboutMe />
+        <HPT />
       </header>
     </div>
   );
