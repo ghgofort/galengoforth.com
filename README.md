@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# galengoforth.com
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This code is for the ReactJS site that used as my personal website. The site can be found at [galengoforth.com](https://galengoforth.com).
 
 ## Available Scripts
 

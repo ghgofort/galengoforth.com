@@ -50,7 +50,7 @@
 
 @media (prefers-reduced-motion: no-preference) {
     .AboutMe__container::after {
-        animation: oval-spin-2 infinite 3s linear;
+        animation: oval-spin-2 infinite 5s linear;
     }
 }
 
