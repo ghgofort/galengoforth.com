@@ -3,7 +3,7 @@
  * from the Raspberry Pi values from the NodeJS API.
  */
 
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import './hpt.css';
 
 const getHPT = async () => {
@@ -23,8 +23,8 @@ function HPT() {
     useEffect(() => {
         getHPT()
             .then(res => {
-                // Only show the last 10 readings.
-                res = res.slice(Math.max(res.length - 10, 0));
+                // only show 1st 10 readings.
+                res = res.slice(0, 10);
                 setApiResponse(res);
             }).catch(err => err);
     }, []);
@@ -42,6 +42,8 @@ function HPT() {
                         isAM = false;
                     } else if (date.getHours() === 0) {
                         time = 12;
+                    } else {
+                        time = date.getHours();
                     }
                     time = time + ':' + (date.getMinutes() < 10 ? '0' +
                         date.getMinutes() : date.getMinutes()) + ' ' +
