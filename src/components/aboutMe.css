@@ -9,9 +9,28 @@
 }
 
 .AboutMe__slide {
-    color: #66aaff;
-    font-size: calc(10px + 2vmin);
+    color: #ff33ff;
+    font-size: calc(10px + 3vmin);
     padding-top: 2rem;
+}
+
+.AboutMe__content {
+
+    & img {
+        padding: .25em 1em;
+    }
+    & p, & span {
+        font-size: 12pt;
+        padding: .5em;
+        vertical-align: top;
+    }
+    & ul {
+        list-style: none;
+    }
+}
+.AboutMe__cert-img {
+    max-width: 150px;
+    height: auto;
 }
 
 .AboutMe__component {
@@ -19,11 +38,15 @@
     font-size: 16pt;
     height: fit-content;
     width: 100%;
+
+    & h3 {
+        color: #61dafb;
+    }
 }
 
 .AboutMe__container {
     background-color: transparent;
-    border-top: 4px solid #66aaff;
+    border-top: 3px solid #66aaff;
     color: #282c34;
     display: flex;
     align-items: center;
