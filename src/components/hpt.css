@@ -1,16 +1,43 @@
 .hpt__component {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
-    justify-content: flex-end;
-    margin-top: 50%;
+    justify-content: center;
+    width: 100%;
+    height: fit-content;
+
     & h4 {
+        border-top: 3px solid #66aaff;
         color: #61dafb;
+        margin-top: 1em;
+        margin-bottom: 0;
+        padding: 1em;
     }
+
+    .hpt__header {
+        width: 100%;
+    }
+}
+
+.hpt__record {
+    width: 35%;
+    margin: 7.5%;
+    text-align: left;
 }
 
 .hpt__slide {
     margin: 0;
     line-height: 1em;
     font-size: 12pt;
+}
+
+@media (max-width: 768px) {
+    .hpt__record {
+        border-bottom: 1px solid #66aaff;
+        border-radius: 25px;
+        padding: 1em;
+        margin: 0;
+        width: 100%;
+    }
 }
