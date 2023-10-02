@@ -1,16 +1,39 @@
 .hpt__component {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
-    justify-content: flex-end;
-    margin-top: 50%;
+    justify-content: center;
+    width: 100%;
+    height: fit-content;
+
     & h4 {
+        border-top: 4px solid #66aaff;
         color: #61dafb;
+        margin-top: 1em;
+        margin-bottom: 0;
+        padding: 1em 0 0 0;
     }
+
+    .hpt__header {
+        width: 100%;
+    }
+}
+
+.hpt__record {
+    max-width: 27%;
+    margin: 3%;
 }
 
 .hpt__slide {
     margin: 0;
     line-height: 1em;
     font-size: 12pt;
+}
+
+@media (max-width: 768px) {
+    .hpt__record {
+        max-width: 100%;
+        margin: 0;
+    }
 }

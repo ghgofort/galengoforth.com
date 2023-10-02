@@ -13,8 +13,10 @@ function AboutMe() {
                     <img src={itsMe} className="itsMe" alt="logo" />
                 </div>
             </div>
-            <h3>Galen Goforth - Software Engineer</h3>
-            <p>Specializing in Salesforce Commerce Cloud (SFCC) technical leadership & software development.</p>
+            <div className="AboutMe__content">
+                <h3>Galen Goforth - Software Engineer</h3>
+                <p>Specializing in Salesforce Commerce Cloud (SFCC) technical leadership & software development.</p>
+            </div>
         </div>
     );
 }

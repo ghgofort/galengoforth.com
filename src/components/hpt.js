@@ -31,8 +31,10 @@ function HPT() {
 
     return (
         <div className="hpt__component">
-            <h4>Humidity, Pressure, & Temperature Readings from Raspberry Pi server.</h4>
-            {
+            <div className="hpt__header">
+                <h4>Humidity, Pressure, & Temperature Readings from Raspberry Pi server.</h4>
+            </div>
+                {
                 apiResponse.map((item, index) => {
                     const date = new Date((item.dateTimeCreated.seconds * 1000));
                     let time = '';
@@ -49,7 +51,7 @@ function HPT() {
                         date.getMinutes() : date.getMinutes()) + ' ' +
                         (isAM ? 'AM' : 'PM');
                     return (
-                        <div key={index}>
+                        <div key={index} className="hpt__record">
                             <p><strong>Date: </strong>{date.toDateString()} <strong>Time:</strong> {time}</p>
                             <p className="hpt__slide">
                                 Humidity: {item.humidity}
