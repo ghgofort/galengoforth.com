@@ -2,8 +2,7 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     width: 100%;
     height: fit-content;
 
@@ -21,9 +20,12 @@
 }
 
 .hpt__record {
-    width: 35%;
-    margin: 7.5%;
+    border-left: 2px solid #66aaff;
+    border-radius: 25px;
+    margin: .25em 0;
+    padding: .5em .5em;
     text-align: left;
+    width: 25%;
 }
 
 .hpt__slide {
