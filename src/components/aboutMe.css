@@ -46,14 +46,14 @@
 }
 
 .AboutMe__container {
+    align-items: center;
     background-color: transparent;
     border-top: 3px solid #66aaff;
     color: #282c34;
     display: flex;
-    align-items: center;
     flex-direction: column;
+    height: 30vh;
     justify-content: flex-start;
-    height: 35vh;
     padding-top: 2rem;
     text-align: center;
     width: 100%;
