@@ -20,8 +20,10 @@
 .App-header__logo {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   width: 100%;
   padding: 1em;
+  justify-content: center;
 }
 
 .App-logo {
@@ -46,5 +48,5 @@
   font-size: calc(10px + 3vmin);
   display: inline;
   max-width: 65%;
-  margin: 0 1em;
+  margin: 1em 1em 0;
 }
