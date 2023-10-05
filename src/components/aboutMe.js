@@ -7,7 +7,7 @@ import sfccDeveloper from '../images/sfcc-developer-cert.png';
 function AboutMe() {
     return (
         <div className="AboutMe__component">
-            <p className="AboutMe__slide">Welcome to galengoforth.com!</p>
+
             <div className="AboutMe__container">
                 <div className="AboutMe"><img src={itsMe} className="itsMe" alt="logo"/></div>
             </div>

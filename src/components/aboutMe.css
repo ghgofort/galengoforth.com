@@ -1,6 +1,5 @@
 .AboutMe {
     align-items: center;
-    background-color: #282c34;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -8,13 +7,8 @@
     height: 100%;
 }
 
-.AboutMe__slide {
-    color: #ff33ff;
-    font-size: calc(10px + 3vmin);
-    padding-top: 2rem;
-}
-
 .AboutMe__content {
+    color: #00ffcc;
 
     & img {
         padding: .25em 1em;
@@ -48,8 +42,8 @@
 .AboutMe__container {
     align-items: center;
     background-color: transparent;
-    border-top: 3px solid #66aaff;
-    color: #282c34;
+    border-top: 1px solid #66aaff;
+    color: #00ffcc;
     display: flex;
     flex-direction: column;
     height: 30vh;
