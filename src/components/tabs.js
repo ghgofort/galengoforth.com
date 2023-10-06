@@ -41,7 +41,7 @@ function Tabs() {
                         <HPT/>
                     </div>
                     <div className={selectedTab === 'tab-3' ? 'Tabs__content Tabs__content--selected' : 'Tabs__content'}>
-
+                        <h3>Coming soon...</h3>
                     </div>
             </div>
     </div>);
