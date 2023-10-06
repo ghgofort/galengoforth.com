@@ -32,7 +32,7 @@ function HPT() {
     return (
         <div className="hpt__component">
             <div className="hpt__header">
-                <h4>Humidity, Pressure, & Temperature Readings from Raspberry Pi server.</h4>
+                <h2>Humidity, Pressure, & Temperature Readings from Raspberry Pi server.</h2>
             </div>
                 {
                 apiResponse.map((item, index) => {

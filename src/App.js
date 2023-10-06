@@ -8,6 +8,8 @@ function App() {
             <div className="App-header">
                 <div className="App-header__logo">
                     <img src={logoImg} className="App-logo" alt="logo"/>
+                </div>
+                <div className="App-header__title">
                     <p className="App-title">Welcome to galengoforth.com!</p>
                 </div>
             </div>
