@@ -8,18 +8,21 @@
     flex-direction: row;
     justify-content: space-evenly;
     width: 100%;
+    border-bottom: 1px solid #08a17e;
+    border-top: 1px solid #08a17e;
 }
 
 .Tabs__tab {
-    background-color: #444444;
-    border: 1px solid #00ffcc;
+    background-color: #222222;
+    border: 1px solid #013d30;
     border-radius: 5px;
-    color: #00ffcc;
+    color: #01e1b4;
+    font-weight: bold;
     cursor: pointer;
     display: inline-block;
-    margin: 0.5em 0;
+    margin: 0.75em;
     padding: 0.5em 1em;
-    width: 25%;
+    width: 30%;
 
     @media (max-width: 768px) {
         width: 20%;
@@ -27,7 +30,9 @@
 }
 
 .Tabs__tab--selected {
-    background-color: #222;
+    background-color: #444444;
+    border: 1px solid #00ffcc;
+    color: #00ffcc;
 }
 
 .Tabs__content {

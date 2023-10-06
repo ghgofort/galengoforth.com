@@ -21,15 +21,15 @@ function Tabs() {
     }
 
     return (
-        <div className="Tabs__component">
-            <div className="Tabs__container">
-                <div id="tab-1" onClick={setSelection} className={selectedTab === 'tab-1' ? 'Tabs__tab Tabs__tab--selected' : 'Tabs__tab'}>
-                    <span>About Me</span>
+        <div className="Tabs__component" role="tabpanel">
+            <div className="Tabs__container" role="tablist">
+                <div id="tab-1" onClick={setSelection} className={selectedTab === 'tab-1' ? 'Tabs__tab Tabs__tab--selected' : 'Tabs__tab'} role="tab">
+                    <span>Home</span>
                 </div>
-                <div id="tab-2" onClick={setSelection} className={selectedTab === 'tab-2' ? 'Tabs__tab Tabs__tab--selected' : 'Tabs__tab'}>
+                <div id="tab-2" onClick={setSelection} className={selectedTab === 'tab-2' ? 'Tabs__tab Tabs__tab--selected' : 'Tabs__tab'} role="tab">
                     <span>Personal Projects</span>
                 </div>
-                <div id="tab-3" onClick={setSelection} className={selectedTab === 'tab-3' ? 'Tabs__tab Tabs__tab--selected' : 'Tabs__tab'}>
+                <div id="tab-3" onClick={setSelection} className={selectedTab === 'tab-3' ? 'Tabs__tab Tabs__tab--selected' : 'Tabs__tab'} role="tab">
                     <span>Resume</span>
                 </div>
             </div>
