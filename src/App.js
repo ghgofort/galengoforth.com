@@ -1,7 +1,6 @@
-import AboutMe from './components/aboutMe';
 import './App.css';
-import HPT from './components/hpt';
 import logoImg from './images/ggoforth_logo.webp';
+import Tabs from './components/tabs';
 
 function App() {
     return (
@@ -13,8 +12,7 @@ function App() {
                 </div>
             </div>
             <div className="App-main">
-                <AboutMe/>
-                <HPT/>
+                <Tabs/>
             </div>
         </div>
     );
