@@ -4,25 +4,32 @@
 }
 
 .Tabs__container {
+    background-color: #010101;
+    border-bottom: 2px solid #6666cc;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     width: 100%;
-    border-bottom: 1px solid #08a17e;
-    border-top: 1px solid #08a17e;
+    padding-left: 20%;
+
+    @media (max-width: 768px) {
+        padding-left: 5%;
+    }
 }
 
 .Tabs__tab {
-    background-color: #222222;
-    border: 1px solid #013d30;
-    border-radius: 5px;
-    color: #01e1b4;
+    background-color: #444444;
+    border-top: 1px solid #6666cc;
+    border-left: 1px solid #6666cc;
+    border-right: 1px solid #6666cc;
+    border-radius: 5px 5px 0 0;
+    color: #58f1d0;
     font-weight: bold;
     cursor: pointer;
     display: inline-block;
-    margin: 0.75em;
+    margin: 0;
     padding: 0.5em 1em;
-    width: 30%;
+    width: 20%;
 
     @media (max-width: 768px) {
         width: 20%;
@@ -30,9 +37,11 @@
 }
 
 .Tabs__tab--selected {
-    background-color: #444444;
-    border: 1px solid #00ffcc;
-    color: #00ffcc;
+    background-color: #111221;
+    border-top: 1px solid #00ffff;
+    border-left: 1px solid #00ffff;
+    border-right: 1px solid #00ffff;
+    color: #00ffff;
 }
 
 .Tabs__content {
