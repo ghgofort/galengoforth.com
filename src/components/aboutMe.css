@@ -76,7 +76,7 @@
     content: "";
     height: 150px;
     margin-right: 50%;
-    margin-top: 25%;
+    margin-top: -15%;
     opacity: .33;
     width: 150px;
     z-index: 1;
@@ -104,7 +104,7 @@
         border-width: 5px;
         height: 150px;
         margin-right: 50%;
-        margin-top: 25%;
+        margin-top: -15%;
         transform: rotate(0deg);
     }
     25% {
@@ -119,6 +119,7 @@
         border-width: 5px;
         height: 0;
         margin-right: -50%;
+        margin-top: 5%;
         transform: rotate(360deg);
     }
     75% {
@@ -133,7 +134,7 @@
         border-width: 5px;
         height: 150px;
         margin-right: 50%;
-        margin-top: 25%;
+        margin-top: -15%;
         transform: rotate(720deg);
     }
 }
