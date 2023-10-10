@@ -85,16 +85,22 @@ function DataGraph() {
                 data: [],
                 label: 'Humidity',
                 fill: false,
+                borderColor: 'rgb(15, 192, 192)',
+                tension: 0.1
             },
             {
                 data: [],
                 label: 'Pressure',
                 fill: false,
+                borderColor: 'rgb(255, 33, 200)',
+                tension: 0.1
             },
             {
                 data: [],
                 label: 'Temperature',
                 fill: false,
+                borderColor: 'rgb(32,255,0)',
+                tension: 0.1
             }
         ]
     };
