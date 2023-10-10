@@ -1,6 +1,8 @@
 /* Styles for DataGraph component */
 .dataGraph__component {
+  max-width: 900px;
+
   & h2 {
-    color: #58f1d0;
+    color: #1b98bb;
   }
 }
