@@ -82,17 +82,17 @@ function DataGraph() {
         labels: labels,
         datasets: [
             {
-                data: data.humidity,
+                data: [],
                 label: 'Humidity',
                 fill: false,
             },
             {
-                data: data.pressure,
+                data: [],
                 label: 'Pressure',
                 fill: false,
             },
             {
-                data: data.temperature,
+                data: [],
                 label: 'Temperature',
                 fill: false,
             }
