@@ -10,37 +10,38 @@ import DataGraph from './dataGraph';
  * @constructor
  */
 function Tabs() {
-    const [selectedTab, setSelectedTab] = useState('tab-1');
+    let currentTab = window.location.pathname.replaceAll('/', '');
+    if (currentTab === '') { currentTab = 'home'; }
+    const [selectedTab, setSelectedTab] = useState(currentTab);
 
     function setSelection(e) {
         const selectedId = e.target.id || e.target.parentElement.id;
         setSelectedTab(selectedId);
-        // REMOVE ME
-        // eslint-disable-next-line no-console
-        console.log(selectedId);
+        // Set URL to match tab selection.
+        window.history.pushState({}, '', `/${selectedId}`);
     }
 
     return (
         <div className="Tabs__component" role="tabpanel">
             <div className="Tabs__container" role="tablist">
-                <div id="tab-1" onClick={setSelection} className={selectedTab === 'tab-1' ? 'Tabs__tab Tabs__tab--selected' : 'Tabs__tab'} role="tab">
+                <div id="home" onClick={setSelection} className={selectedTab === 'home' ? 'Tabs__tab Tabs__tab--selected' : 'Tabs__tab'} role="tab">
                     <span>Home</span>
                 </div>
-                <div id="tab-2" onClick={setSelection} className={selectedTab === 'tab-2' ? 'Tabs__tab Tabs__tab--selected' : 'Tabs__tab'} role="tab">
+                <div id="projects" onClick={setSelection} className={selectedTab === 'projects' ? 'Tabs__tab Tabs__tab--selected' : 'Tabs__tab'} role="tab">
                     <span>Personal Projects</span>
                 </div>
-                <div id="tab-3" onClick={setSelection} className={selectedTab === 'tab-3' ? 'Tabs__tab Tabs__tab--selected' : 'Tabs__tab'} role="tab">
+                <div id="resume" onClick={setSelection} className={selectedTab === 'resume' ? 'Tabs__tab Tabs__tab--selected' : 'Tabs__tab'} role="tab">
                     <span>Resume</span>
                 </div>
             </div>
             <div className="Tabs__content-container">
-                    <div className={selectedTab === 'tab-1' ? 'Tabs__content Tabs__content--selected' : 'Tabs__content'}>
+                    <div className={selectedTab === 'home' ? 'Tabs__content Tabs__content--selected' : 'Tabs__content'}>
                         <AboutMe/>
                     </div>
-                    <div className={selectedTab === 'tab-2' ? 'Tabs__content Tabs__content--selected' : 'Tabs__content'}>
+                    <div className={selectedTab === 'projects' ? 'Tabs__content Tabs__content--selected' : 'Tabs__content'}>
                         <DataGraph/>
                     </div>
-                    <div className={selectedTab === 'tab-3' ? 'Tabs__content Tabs__content--selected' : 'Tabs__content'}>
+                    <div className={selectedTab === 'resume' ? 'Tabs__content Tabs__content--selected' : 'Tabs__content'}>
                         <h3>Coming soon...</h3>
                     </div>
             </div>
