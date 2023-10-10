@@ -84,7 +84,7 @@
 
 @media (prefers-reduced-motion: no-preference) {
     .AboutMe::after {
-        animation: oval-spin infinite 5s linear;
+        animation: oval-spin3 infinite 16s linear;
     }
 }
 
@@ -96,6 +96,76 @@
     border-radius: 50%;
     margin: 0;
     z-index: 2;
+}
+
+/* keyframes for animations */
+
+/* Bounce effect for oval */
+@keyframes oval-spin3 {
+    0% {
+        border: #00ffcc solid 5px;
+        border-radius: 50%;
+        margin-right: 50%;
+        margin-top: -15%;
+        transform: rotate3d(0, 1, 1, 0deg);
+    }
+    12.5% {
+        border: #dd77ff solid 7px;
+        border-radius: 25%;
+        margin-right: -50%;
+        margin-top: 0;
+        transform: rotate3d(0, 1, 1, 90deg);
+    }
+    25% {
+        border: #ff00ff solid 5px;
+        border-radius: 50%;
+        margin-right: -35%;
+        margin-top: 15%;
+        transform: rotate3d(0, 1, 1, 180deg);
+    }
+    37.5% {
+        border: #dd77ff solid 3px;
+        border-radius: 0;
+        margin-right: 25%;
+        margin-top: -12%;
+        transform: rotate3d(0, 1, 1, 360deg);
+    }
+    50% {
+        border: #00ffcc solid 5px;
+        border-radius: 50%;
+        margin-right: 55%;
+        margin-top: 20%;
+        transform: rotate3d(0, 1, 1, 720deg);
+    }
+    62.5% {
+        border: #5b03cb solid 7px;
+        border-radius: 5%;
+        margin-right: -5%;
+        margin-top: -12%;
+        transform: rotate3d(0, 1, 1, 540deg);
+    }
+    75% {
+        border: #ff00ff solid 5px;
+        border-radius: 50%;
+        margin-right: 45%;
+        margin-top: 17%;
+        transform: rotate3d(0, 1, 1, 470deg);
+    }
+    87.5% {
+        border: #0edbee solid 3px;
+        border-radius: 0;
+        margin-right: -50%;
+        margin-top: -1%;
+        transform: rotate3d(0, 1, 1, 360deg);
+    }
+    100% {
+        border: #00ffcc solid 5px;
+        border-radius: 50%;
+        margin-right: 50%;
+        margin-top: -15%;
+        transform: rotate3d(0, 1, 1, 0deg);
+    }
+
 }
 
 @keyframes oval-spin {
@@ -110,7 +180,7 @@
     25% {
         border-color: #dd77ff;
         border-width: 7px;
-        height: 50px;
+        height: 100px;
         margin-top: 0;
         transform: rotate(180deg);
     }
@@ -125,7 +195,7 @@
     75% {
         border-color: #dd77ff;
         border-width: 7px;
-        height: 50px;
+        height: 100px;
         margin-top: 0;
         transform: rotate(540deg);
     }
