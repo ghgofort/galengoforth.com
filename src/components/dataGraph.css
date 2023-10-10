@@ -1,0 +1,6 @@
+/* Styles for DataGraph component */
+.dataGraph__component {
+  & h2 {
+    color: #58f1d0;
+  }
+}
