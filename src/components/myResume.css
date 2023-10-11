@@ -56,3 +56,8 @@
     flex-wrap: wrap;
     padding: 1em;
 }
+
+.MyResume__contact {
+    max-width: 75%;
+    margin-right: 2em;
+}
