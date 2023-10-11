@@ -5,7 +5,7 @@
 
 import { useState } from "react";
 import './myResume.css';
-
+import itsMe from '../images/itsMe.jpg';
 import sfccArchitect from '../images/sfcc-architect-cert.png';
 import sfccDeveloper from '../images/sfcc-developer-cert.png';
 
@@ -14,11 +14,24 @@ function MyResume() {
 
     return (
         <div className="MyResume__component">
-            <h1>Galen Goforth - Software Engineer</h1>
-            <div id="introduction" className="MyResume__introduction">
-                <h2>Introduction</h2>
-                <p>Hi, I'm <span className="MyResume__name">Galen</span>! I'm a software engineer with a passion for learning and creating.</p>
+            <div id="introduction" className="MyResume__header">
+                <div className="MyResume__introduction">
+                    <h1>Galen Goforth - Software Engineer</h1>
+                    <h2>Introduction</h2>
+                    <p>Hi, I'm <span className="MyResume__name">Galen Goforth</span>! I'm a software engineer with a passion for learning and creating.</p>
+                    <p>I have experience working on a wide variety of projects, from small personal projects to large enterprise level e-commerce websites. I have worked on projects in a variety of languages and frameworks, including JavaScript, ReactJS, NodeJS, Salesforce Commerce Cloud (SFCC), and others.</p>
+                </div>
+                <div className="MyResume__contact">
+                    <ul>
+                        <li><p>email: <a href="emailto:galengoforth@gmail.com">galengoforth@gmail.com</a></p></li>
+                        <li><p>phone: <span>928-220-5089</span></p></li>
+                        <li><p>github: <a href="https://github.com/ghgoforth">github.com/ghgoforth</a></p></li>
+                        <li><p>linkedin: <a href="https://www.linkedin.com/in/galen-goforth-87784442/">https://www.linkedin.com/in/galen-goforth-87784442/</a></p></li>
+                    </ul>
+                </div>
+                <img className="MyResume__itsMe" src={itsMe} alt="Galen Goforth" />
             </div>
+            {/* My Experience Section */}
             <div id="experience" className="MyResume__experience">
                 <h2>Experience</h2>
                 <ul>
@@ -85,6 +98,28 @@ function MyResume() {
                     </li>
                 </ul>
             </div>
+            {/* My Education Section */}
+            <div id="education" className="MyResume__education">
+                <h2>Education</h2>
+                <ul>
+                    <li>
+                        <h3>B.S. in Software Engineering</h3>
+                        <p>Arizona State University | (2013 – 2017)</p>
+                        <ul>
+                            <li>Graduated magna cum laude</li>
+                            <li>Coursework included: Software Engineering, Software Development, Database Design, Data Structures & Algorithms, Web Application Development, and Operating Systems.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3>Associates Degree in General Education</h3>
+                        <p>Coconino Community College | (2011 – 2013)</p>
+                        <ul>
+                            <li>Information Technology degree focus</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            
             <div className="MyResume__Certifications">
                 <h2>Certifications</h2>
                 <ul>
