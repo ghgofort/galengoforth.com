@@ -3,6 +3,7 @@ import { useState } from 'react';
 import './tabs.css';
 import AboutMe from './aboutMe';
 import DataGraph from './dataGraph';
+import MyResume from './myResume';
 
 /**
  * React component that holds tabs for each of the sections of the page.
@@ -42,7 +43,7 @@ function Tabs() {
                         <DataGraph/>
                     </div>
                     <div className={selectedTab === 'resume' ? 'Tabs__content Tabs__content--selected' : 'Tabs__content'}>
-                        <h3>Coming soon...</h3>
+                        <MyResume/>
                     </div>
             </div>
     </div>);
