@@ -27,8 +27,8 @@ function MyResume() {
                     <li>
                         <span>Salesforce Certified B2C Commerce Developer & Technical Architect</span>
                         <div>
-                            <img className="AboutMe__cert-img" src={sfccDeveloper} alt={'Salesforce B2C Commerce Developer Certification Badge'}/>
-                            <img className="AboutMe__cert-img" src={sfccArchitect} alt={'Salesforce B2C Commerce Technical Architect Certification Badge'}/>
+                            <img className="MyResume__cert-img" src={sfccDeveloper} alt={'Salesforce B2C Commerce Developer Certification Badge'}/>
+                            <img className="MyResume__cert-img" src={sfccArchitect} alt={'Salesforce B2C Commerce Technical Architect Certification Badge'}/>
                         </div>
                     </li>
                 </ul>
