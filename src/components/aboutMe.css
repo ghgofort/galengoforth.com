@@ -7,25 +7,20 @@
     height: 100%;
 }
 
-.AboutMe__content {
+.AboutMe__intro {
     color: #ffeedd;
 
     & p, & span {
-        font-size: 12pt;
-        padding: .5em;
-        vertical-align: top;
+        color:#0edbee;
+        font-size: 18pt;
+        padding: 0 .25em;
     }
     & ul {
         list-style: none;
         padding-inline-start: 0;
     }
 }
-.AboutMe__cert-img {
-    height: auto;
-    max-width: 150px;
-    padding-top: 1em;
-    margin: 0 1em;
-}
+
 
 .AboutMe__component {
     background-color: transparent;
@@ -33,7 +28,7 @@
     height: fit-content;
     width: 100%;
 
-    & h3 {
+    & h1 {
         color: #1b98bb;
     }
 }
@@ -48,6 +43,7 @@
     justify-content: flex-start;
     padding-top: 2rem;
     text-align: center;
+    flex-wrap: wrap;
     width: 100%;
 }
 
@@ -166,47 +162,6 @@
         transform: rotate3d(0, 1, 1, 0deg);
     }
 
-}
-
-@keyframes oval-spin {
-    0% {
-        border-color: #00ffcc;
-        border-width: 5px;
-        height: 150px;
-        margin-right: 50%;
-        margin-top: -15%;
-        transform: rotate(0deg);
-    }
-    25% {
-        border-color: #dd77ff;
-        border-width: 7px;
-        height: 100px;
-        margin-top: 0;
-        transform: rotate(180deg);
-    }
-    50% {
-        border-color: #ff00ff;
-        border-width: 5px;
-        height: 0;
-        margin-right: -50%;
-        margin-top: 5%;
-        transform: rotate(360deg);
-    }
-    75% {
-        border-color: #dd77ff;
-        border-width: 7px;
-        height: 100px;
-        margin-top: 0;
-        transform: rotate(540deg);
-    }
-    100% {
-        border-color: #00ffcc;
-        border-width: 5px;
-        height: 150px;
-        margin-right: 50%;
-        margin-top: -15%;
-        transform: rotate(720deg);
-    }
 }
 
 @keyframes oval-spin-2 {
