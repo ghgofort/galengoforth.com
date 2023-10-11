@@ -1,14 +1,19 @@
 /* Styling for myResume component */
 .MyResume__component {
+    text-align: left;
     background-color: #cfcfcf;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     justify-content: flex-start;
-    margin: 0 auto;
+    margin: 0 1em;
     width: 90%;
     height: 100%;
-    padding: 0 0 50px 0;
+    padding: 0 1em 1em 1em;
+
+    & h3 {
+        color: #2a1b57;
+    }
 }
 
 .MyResume__cert-img {
@@ -16,4 +21,29 @@
     max-width: 150px;
     padding-top: 1em;
     margin: 0 1em;
+}
+
+.MyResume__experience {
+    width: 100%;
+}
+
+.MyResume__experience ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.MyResume__experience li {
+    margin-bottom: 1em;
+}
+
+.MyResume__experience li ul li:before {
+    content: "+";
+    margin-right: 0.5em;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #3300cc;
+    border-radius: 35%;
+    padding: 0.15em;
+    color: #3300cc;
 }
