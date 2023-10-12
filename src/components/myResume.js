@@ -17,23 +17,25 @@ function MyResume() {
     const certRef = useRef(null);
 
     const scrollEffect = (ref) => {
-        ref.current.scrollIntoView({ behavior: 'smooth' });
-        setCurrentSection(ref.current.id)
+        return () => {
+            setCurrentSection(ref.current.id);
+            ref.current.scrollIntoView({ behavior: 'smooth' });
+        }
     };
 
     return (
         <div className="MyResume__component">
             <div className="MyResume__section-selector">
-                <div className={currentSection === 'introduction' ? 'MyResume__section MyResume__section--selected' : 'MyResume__section'} onClick={() => scrollEffect(introRef)}>
+                <div className={currentSection === 'introduction' ? 'MyResume__section MyResume__section--selected' : 'MyResume__section'} onClick={scrollEffect(introRef)}>
                     <span>Introduction</span>
                 </div>
-                <div className={currentSection === 'experience' ? 'MyResume__section MyResume__section--selected' : 'MyResume__section'} onClick={() => scrollEffect(expRef)}>
+                <div className={currentSection === 'experience' ? 'MyResume__section MyResume__section--selected' : 'MyResume__section'} onClick={scrollEffect(expRef)}>
                     <span>Experience</span>
                 </div>
-                <div className={currentSection === 'education' ? 'MyResume__section MyResume__section--selected' : 'MyResume__section'} onClick={() => scrollEffect(eduRef)}>
+                <div className={currentSection === 'education' ? 'MyResume__section MyResume__section--selected' : 'MyResume__section'} onClick={scrollEffect(eduRef)}>
                     <span>Education</span>
                 </div>
-                <div className={currentSection === 'certifications' ? 'MyResume__section MyResume__section--selected' : 'MyResume__section'} onClick={() => scrollEffect(certRef)}>
+                <div className={currentSection === 'certifications' ? 'MyResume__section MyResume__section--selected' : 'MyResume__section'} onClick={scrollEffect(certRef)}>
                     <span>Certifications</span>
                 </div>
             </div>
