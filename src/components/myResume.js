@@ -3,7 +3,7 @@
  * @module src/components/myResume
  */
 
-import { useState } from "react";
+import { useRef, useState } from 'react';
 import './myResume.css';
 import itsMe from '../images/itsMe.jpg';
 import sfccArchitect from '../images/sfcc-architect-cert.png';
@@ -11,24 +11,33 @@ import sfccDeveloper from '../images/sfcc-developer-cert.png';
 
 function MyResume() {
     const [currentSection, setCurrentSection] = useState('introduction');
+    const introRef = useRef(null);
+    const expRef = useRef(null);
+    const eduRef = useRef(null);
+    const certRef = useRef(null);
+
+    const scrollEffect = (ref) => {
+        ref.current.scrollIntoView({ behavior: 'smooth' });
+        setCurrentSection(ref.current.id)
+    };
 
     return (
         <div className="MyResume__component">
             <div className="MyResume__section-selector">
-                <div className={currentSection === 'introduction' ? 'MyResume__section MyResume__section--selected' : 'MyResume__section'} onClick={() => setCurrentSection('introduction')}>
+                <div className={currentSection === 'introduction' ? 'MyResume__section MyResume__section--selected' : 'MyResume__section'} onClick={() => scrollEffect(introRef)}>
                     <span>Introduction</span>
                 </div>
-                <div className={currentSection === 'experience' ? 'MyResume__section MyResume__section--selected' : 'MyResume__section'} onClick={() => setCurrentSection('experience')}>
+                <div className={currentSection === 'experience' ? 'MyResume__section MyResume__section--selected' : 'MyResume__section'} onClick={() => scrollEffect(expRef)}>
                     <span>Experience</span>
                 </div>
-                <div className={currentSection === 'education' ? 'MyResume__section MyResume__section--selected' : 'MyResume__section'} onClick={() => setCurrentSection('education')}>
+                <div className={currentSection === 'education' ? 'MyResume__section MyResume__section--selected' : 'MyResume__section'} onClick={() => scrollEffect(eduRef)}>
                     <span>Education</span>
                 </div>
-                <div className={currentSection === 'certifications' ? 'MyResume__section MyResume__section--selected' : 'MyResume__section'} onClick={() => setCurrentSection('certifications')}>
+                <div className={currentSection === 'certifications' ? 'MyResume__section MyResume__section--selected' : 'MyResume__section'} onClick={() => scrollEffect(certRef)}>
                     <span>Certifications</span>
                 </div>
             </div>
-            <div id="introduction" className="MyResume__header">
+            <div id="introduction" ref={introRef} className="MyResume__header">
                 <h1>Galen Goforth</h1>
                 <h3>Software Engineer</h3>
             </div>
@@ -38,7 +47,7 @@ function MyResume() {
                 <p>Hi, I'm <span className="MyResume__name">Galen Goforth</span>! I'm a software engineer with a passion for learning and creating.</p>
                 <p>I have experience working on a wide variety of projects, from small personal projects to large enterprise level e-commerce websites. I have worked on projects in a variety of languages and frameworks, including JavaScript, ReactJS, NodeJS, Salesforce Commerce Cloud (SFCC), and others.</p>
             </div>
-            <div className="MyResume__contact">
+            <div id="contact" className="MyResume__contact">
                 <h2>Contact</h2>
                 <ul>
                     <li><p>email: <a href="emailto:galengoforth@gmail.com">galengoforth@gmail.com</a></p></li>
@@ -48,7 +57,7 @@ function MyResume() {
                 </ul>
             </div>
             {/* My Experience Section */}
-            <div id="experience" className="MyResume__experience">
+            <div id="experience" ref={expRef} className="MyResume__experience">
                 <h2>Experience</h2>
                 <ul>
                     <li>
@@ -115,7 +124,7 @@ function MyResume() {
                 </ul>
             </div>
             {/* My Education Section */}
-            <div id="education" className="MyResume__education">
+            <div id="education" ref={eduRef} className="MyResume__education">
                 <h2>Education</h2>
                 <ul>
                     <li>
@@ -136,7 +145,7 @@ function MyResume() {
                 </ul>
             </div>
 
-            <div className="MyResume__Certifications">
+            <div id="certifications" ref={certRef} className="MyResume__Certifications">
                 <h2>Certifications</h2>
                 <ul>
                     <li><p>Salesforce Commerce Cloud (SFCC) Technical Leadership & Experience</p>
