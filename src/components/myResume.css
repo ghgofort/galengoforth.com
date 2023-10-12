@@ -3,7 +3,8 @@
     text-align: left;
     background-color: #cfcfcf;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     align-items: flex-start;
     justify-content: flex-start;
     margin: 0 1em;
@@ -11,9 +12,93 @@
     height: 100%;
     padding: 0 1em 1em 1em;
 
+    & h1 {
+        margin-bottom: 0;
+        width: fit-content;
+    }
     & h3 {
         color: #2a1b57;
+        margin-top: 1.75em;
+        margin-left: .25em;
     }
+
+    @media (max-width: 768px) {
+        & h1 {
+            margin: 0;
+            width: 100%;
+        }
+        & h3 {
+            margin: 0;
+        }
+    }
+}
+
+.MyResume__header {
+    width: 100%;
+    align-items: flex-start;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 1em;
+}
+
+.MyResume__section-selector {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0 0 1em 0;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+    }
+}
+
+.MyResume__section {
+    color: #3b254d;
+    font-weight: bold;
+    cursor: pointer;
+    display: inline-block;
+    margin: 0;
+    padding: 0.5em 1em;
+    width: 20%;
+
+    @media (max-width: 768px) {
+        width: 20%;
+    }
+}
+
+.MyResume__section--selected{
+    color: #81197f;
+    text-decoration: #1b98bb underline 3px;
+}
+
+.MyResume__introduction {
+    margin: 0 1em 0 0;
+    max-width: 300px;
+
+    @media (max-width: 768px) {
+        margin: 0;
+        max-width: 100%;
+    }
+}
+
+.MyResume__itsMe {
+    width: 150px;
+    margin: 0 1em 0 0;
+    height: auto;
+    border: 2px solid #3b254d;
+    border-radius: 10%;
+
+    @media (max-width: 768px) {
+        width: 50%;
+        margin: 0 auto;
+    }
+}
+
+.MyResume__contact {
+    max-width: 75%;
+    margin-right: 2em;
 }
 
 .MyResume__cert-img {
@@ -29,30 +114,4 @@
 
 .MyResume__experience li {
     margin-bottom: 1em;
-}
-
-.MyResume__introduction {
-    max-width: 75%;
-    margin: 0;
-}
-
-.MyResume__itsMe {
-    width: 150px;
-    margin: 0;
-    height: auto;
-    border: 2px solid #61dafb;
-    border-radius: 5%;
-
-    @media (max-width: 768px) {
-        width: 60%;
-        margin: 0 20%;
-    }
-}
-
-.MyResume__header {
-    align-items: flex-start;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    padding: 1em;
 }
