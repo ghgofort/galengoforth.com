@@ -14,22 +14,38 @@ function MyResume() {
 
     return (
         <div className="MyResume__component">
+            <div className="MyResume__section-selector">
+                <div className={currentSection === 'introduction' ? 'MyResume__section MyResume__section--selected' : 'MyResume__section'} onClick={() => setCurrentSection('introduction')}>
+                    <span>Introduction</span>
+                </div>
+                <div className={currentSection === 'experience' ? 'MyResume__section MyResume__section--selected' : 'MyResume__section'} onClick={() => setCurrentSection('experience')}>
+                    <span>Experience</span>
+                </div>
+                <div className={currentSection === 'education' ? 'MyResume__section MyResume__section--selected' : 'MyResume__section'} onClick={() => setCurrentSection('education')}>
+                    <span>Education</span>
+                </div>
+                <div className={currentSection === 'certifications' ? 'MyResume__section MyResume__section--selected' : 'MyResume__section'} onClick={() => setCurrentSection('certifications')}>
+                    <span>Certifications</span>
+                </div>
+            </div>
             <div id="introduction" className="MyResume__header">
-                <div className="MyResume__introduction">
-                    <h1>Galen Goforth - Software Engineer</h1>
-                    <h2>Introduction</h2>
-                    <p>Hi, I'm <span className="MyResume__name">Galen Goforth</span>! I'm a software engineer with a passion for learning and creating.</p>
-                    <p>I have experience working on a wide variety of projects, from small personal projects to large enterprise level e-commerce websites. I have worked on projects in a variety of languages and frameworks, including JavaScript, ReactJS, NodeJS, Salesforce Commerce Cloud (SFCC), and others.</p>
-                </div>
-                <div className="MyResume__contact">
-                    <ul>
-                        <li><p>email: <a href="emailto:galengoforth@gmail.com">galengoforth@gmail.com</a></p></li>
-                        <li><p>phone: <span>928-220-5089</span></p></li>
-                        <li><p>github: <a href="https://github.com/ghgoforth">github.com/ghgoforth</a></p></li>
-                        <li><p>linkedin: <a href="https://www.linkedin.com/in/galen-goforth-87784442/">https://www.linkedin.com/in/galen-goforth-87784442/</a></p></li>
-                    </ul>
-                </div>
-                <img className="MyResume__itsMe" src={itsMe} alt="Galen Goforth" />
+                <h1>Galen Goforth</h1>
+                <h3>Software Engineer</h3>
+            </div>
+            <img className="MyResume__itsMe" src={itsMe} alt="Galen Goforth" />
+            <div className="MyResume__introduction">
+                <h2>Introduction</h2>
+                <p>Hi, I'm <span className="MyResume__name">Galen Goforth</span>! I'm a software engineer with a passion for learning and creating.</p>
+                <p>I have experience working on a wide variety of projects, from small personal projects to large enterprise level e-commerce websites. I have worked on projects in a variety of languages and frameworks, including JavaScript, ReactJS, NodeJS, Salesforce Commerce Cloud (SFCC), and others.</p>
+            </div>
+            <div className="MyResume__contact">
+                <h2>Contact</h2>
+                <ul>
+                    <li><p>email: <a href="emailto:galengoforth@gmail.com">galengoforth@gmail.com</a></p></li>
+                    <li><p>phone: <span>928-220-5089</span></p></li>
+                    <li><p>github: <a href="https://github.com/ghgoforth">github.com/ghgoforth</a></p></li>
+                    <li><p>linkedin: <a href="https://www.linkedin.com/in/galen-goforth-87784442/">https://www.linkedin.com/in/galen-goforth-87784442/</a></p></li>
+                </ul>
             </div>
             {/* My Experience Section */}
             <div id="experience" className="MyResume__experience">
@@ -119,7 +135,7 @@ function MyResume() {
                     </li>
                 </ul>
             </div>
-            
+
             <div className="MyResume__Certifications">
                 <h2>Certifications</h2>
                 <ul>
