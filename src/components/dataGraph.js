@@ -36,7 +36,7 @@ function DataGraph() {
         const temperatureData = [];
         const labels = [];
         getHPT().then(res => {
-            res.forEach((item) => {
+            res.reverse().forEach((item) => {
                 const date = new Date((item.dateTimeCreated.seconds * 1000));
                 let time = '';
                 let isAM = true;
@@ -45,13 +45,16 @@ function DataGraph() {
                     isAM = false;
                 } else if (date.getHours() === 0) {
                     time = 12;
+                } else if (date.getHours() === 12) {
+                    time = 12;
+                    isAM = false;
                 } else {
                     time = date.getHours();
                 }
                 time = time + ':' + (date.getMinutes() < 10 ? '0' +
                         date.getMinutes() : date.getMinutes()) + ' ' +
                     (isAM ? 'AM' : 'PM');
-                labels.push(time);
+                labels.push(date.toDateString() + ' ' + time);
                 humidityData.push(item.humidity);
                 pressureData.push(item.pressure_inHg);
                 temperatureData.push(item.temperature_F);
@@ -76,6 +79,16 @@ function DataGraph() {
             ...prevState,
             [name]: checked
         }));
+    };
+
+    const dataGraphOptions = {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        },
+        responsive: true,
+        maintainAspectRatio: true
     };
 
     const dataGraphData = {
@@ -150,7 +163,7 @@ function DataGraph() {
                 </label>
             </div>
             <div className="dataGraph__graph">
-                <Line data={dataGraphData} />
+                <Line data={dataGraphData}  options={dataGraphOptions}/>
             </div>
         </div>
     );

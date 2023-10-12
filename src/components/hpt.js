@@ -20,14 +20,7 @@ const getHPT = async () => {
 
 function HPT() {
     const [apiResponse, setApiResponse] = useState([]);
-    useEffect(() => {
-        getHPT()
-            .then(res => {
-                // only show 1st 10 readings.
-                res = res.slice(0, 10);
-                setApiResponse(res);
-            }).catch(err => err);
-    }, []);
+    useEffect(() => { getHPT().then(res => { setApiResponse(res); }).catch(err => err); }, []);
 
     return (
         <div className="hpt__component">
@@ -44,6 +37,9 @@ function HPT() {
                         isAM = false;
                     } else if (date.getHours() === 0) {
                         time = 12;
+                    } else if (date.getHours() === 12) {
+                        time = 12;
+                        isAM = false;
                     } else {
                         time = date.getHours();
                     }

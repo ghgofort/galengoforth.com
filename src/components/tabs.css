@@ -46,9 +46,15 @@
 .Tabs__content--selected {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 .Tabs__tab--disabled {
     background-color: #eee;
     color: #aaa;
     cursor: not-allowed;
+}
+
+/* Individual Tabs */
+.Tabs__content--projects {
+    padding: 1em;
 }

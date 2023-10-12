@@ -4,6 +4,7 @@ import './tabs.css';
 import AboutMe from './aboutMe';
 import DataGraph from './dataGraph';
 import MyResume from './myResume';
+import HPT from './hpt';
 
 /**
  * React component that holds tabs for each of the sections of the page.
@@ -36,13 +37,14 @@ function Tabs() {
                 </div>
             </div>
             <div className="Tabs__content-container">
-                    <div className={selectedTab === 'home' ? 'Tabs__content Tabs__content--selected' : 'Tabs__content'}>
+                    <div className={selectedTab === 'home' ? 'Tabs__content Tabs__content--home Tabs__content--selected' : 'Tabs__content'}>
                         <AboutMe/>
                     </div>
-                    <div className={selectedTab === 'projects' ? 'Tabs__content Tabs__content--selected' : 'Tabs__content'}>
+                    <div className={selectedTab === 'projects' ? 'Tabs__content Tabs__content--projects Tabs__content--selected' : 'Tabs__content'}>
                         <DataGraph/>
+                        <HPT/>
                     </div>
-                    <div className={selectedTab === 'resume' ? 'Tabs__content Tabs__content--selected' : 'Tabs__content'}>
+                    <div className={selectedTab === 'resume' ? 'Tabs__content Tabs__content--resume Tabs__content--selected' : 'Tabs__content'}>
                         <MyResume/>
                     </div>
             </div>
