@@ -2,6 +2,7 @@
 .MyResume__component {
     text-align: left;
     background-color: #cfcfcf;
+    color: #214321;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -15,6 +16,10 @@
     & h1 {
         margin-bottom: 0;
         width: fit-content;
+    }
+    & h2 {
+        color: #3b259d;
+        font-size: 16pt;
     }
     & h3 {
         color: #2a1b57;
@@ -74,8 +79,9 @@
 }
 
 .MyResume__introduction {
-    margin: 0 1em 0 0;
+    margin: 0 1em;
     max-width: 300px;
+    text-align: justify;
 
     @media (max-width: 768px) {
         margin: 0;
@@ -85,7 +91,7 @@
 
 .MyResume__itsMe {
     width: 150px;
-    margin: 0 1em 0 0;
+    margin: 1em 1em 0 1em;
     height: auto;
     border: 2px solid #3b254d;
     border-radius: 10%;

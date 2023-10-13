@@ -1,9 +1,14 @@
 body {
   background-color: #2a2a2a;
+  color: #deeedd;
 }
 
 h2 {
-  color: #006d8b;
+  color: #c19bfd;
+}
+
+h3 {
+  color: #22ff66;
 }
 
 .App {

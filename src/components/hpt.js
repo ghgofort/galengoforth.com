@@ -25,7 +25,7 @@ function HPT() {
     return (
         <div className="hpt__component">
             <div className="hpt__header">
-                <h2>Readings Table - Last 24 hours</h2>
+                <h3>Readings Table - Last 24 hours</h3>
             </div>
                 <div className="hpt__record hpt__record--table-header">
                     <p className="hpt__slide hpt__slide--col1"><strong>Date</strong></p>
