@@ -25,8 +25,15 @@ function HPT() {
     return (
         <div className="hpt__component">
             <div className="hpt__header">
-                <h2>Humidity, Pressure, & Temperature Readings from Raspberry Pi server.</h2>
+                <h2>Readings Table - Last 24 hours</h2>
             </div>
+                <div className="hpt__record hpt__record--table-header">
+                    <p className="hpt__slide hpt__slide--col1"><strong>Date: </strong></p>
+                    <p className="hpt__slide hpt__slide--col2"><strong>Time:</strong></p>
+                    <p className="hpt__slide hpt__slide--col3">Humidity:</p>
+                    <p className="hpt__slide hpt__slide--col4">Pressure:</p>
+                    <p className="hpt__slide hpt__slide--col5">Temperature (f):</p>
+                </div>
                 {
                 apiResponse.map((item, index) => {
                     const date = new Date((item.dateTimeCreated.seconds * 1000));
@@ -48,11 +55,11 @@ function HPT() {
                         (isAM ? 'AM' : 'PM');
                     return (
                         <div key={index} className="hpt__record">
-                            <p className="hpt__slide"><strong>Date: </strong>{date.toDateString()}</p>
-                            <p className="hpt__slide"><strong>Time:</strong> {time}</p>
-                            <p className="hpt__slide">Humidity: {item.humidity}</p>
-                            <p className="hpt__slide">Pressure: {item.pressure_inHg}</p>
-                            <p className="hpt__slide">Temperature (f): {item.temperature_F}</p>
+                            <p className="hpt__slide hpt__slid--col1">{date.toDateString()}</p>
+                            <p className="hpt__slide hpt__slid--col2">{time}</p>
+                            <p className="hpt__slide hpt__slid--col3">{String(item.humidity).substring(0, 10)}</p>
+                            <p className="hpt__slide hpt__slid--col4">{String(item.pressure_inHg).substring(0, 10)}</p>
+                            <p className="hpt__slide hpt__slid--col5">{String(item.temperature_F).substring(0, 6)}</p>
                         </div>
                     )
                 })
