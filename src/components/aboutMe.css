@@ -10,7 +10,7 @@
 .AboutMe__intro {
     color: #ffeedd;
 
-    & p, & span {
+    & span {
         color:#0edbee;
         font-size: 18pt;
         padding: 0 .25em;
@@ -72,7 +72,7 @@
     content: "";
     height: 150px;
     margin-right: 50%;
-    margin-top: -15%;
+    margin-top: -15vh;
     opacity: .33;
     width: 150px;
     z-index: 1;
@@ -102,7 +102,7 @@
         border: #00ffcc solid 5px;
         border-radius: 50%;
         margin-right: 50%;
-        margin-top: -15%;
+        margin-top: -15vh;
         transform: rotate3d(0, 1, 1, 0deg);
     }
     12.5% {
@@ -116,49 +116,49 @@
         border: #ff00ff solid 5px;
         border-radius: 50%;
         margin-right: -35%;
-        margin-top: 15%;
+        margin-top: 20vh;
         transform: rotate3d(0, 1, 1, 180deg);
     }
     37.5% {
         border: #dd77ff solid 3px;
         border-radius: 0;
         margin-right: 25%;
-        margin-top: -12%;
+        margin-top: -17vh;
         transform: rotate3d(0, 1, 1, 360deg);
     }
     50% {
         border: #00ffcc solid 5px;
         border-radius: 50%;
         margin-right: 55%;
-        margin-top: 20%;
-        transform: rotate3d(0, 1, 1, 720deg);
+        margin-top: 24vh;
+        transform: rotate3d(0, 1, 1, 540deg);
     }
     62.5% {
         border: #5b03cb solid 7px;
         border-radius: 5%;
         margin-right: -5%;
-        margin-top: -12%;
-        transform: rotate3d(0, 1, 1, 540deg);
+        margin-top: -32vh;
+        transform: rotate3d(0, 1, 1, 720deg);
     }
     75% {
         border: #ff00ff solid 5px;
         border-radius: 50%;
         margin-right: 45%;
-        margin-top: 17%;
-        transform: rotate3d(0, 1, 1, 470deg);
+        margin-top: 12vh;
+        transform: rotate3d(0, 1, 1, 630deg);
     }
     87.5% {
         border: #0edbee solid 3px;
         border-radius: 0;
         margin-right: -50%;
-        margin-top: -1%;
+        margin-top: -31vh;
         transform: rotate3d(0, 1, 1, 360deg);
     }
     100% {
         border: #00ffcc solid 5px;
         border-radius: 50%;
         margin-right: 50%;
-        margin-top: -15%;
+        margin-top: -15vh;
         transform: rotate3d(0, 1, 1, 0deg);
     }
 

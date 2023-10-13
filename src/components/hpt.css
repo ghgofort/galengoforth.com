@@ -23,16 +23,23 @@
 }
 
 .hpt__record {
-    border-left: 2px solid #66aaff;
-    border-radius: 25px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
     margin: .25em 0;
-    padding: .5em .5em;
+    padding: .5em 0;
     text-align: left;
-    width: 25%;
+    width: 100%;
 }
 
 .hpt__slide {
+    width: 20%;
     margin: 0;
+    padding: .5em 0;
+    border-top: 1px solid #66aaff;
+    border-bottom: 1px solid #66aaff;
     line-height: 1em;
     font-size: 12pt;
 }
@@ -44,5 +51,14 @@
         padding: 1em;
         margin: 0;
         width: 100%;
+    }
+
+    .hpt__slide {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        border: none;
+        line-height: 1.5em;
+        font-size: 10pt;
     }
 }

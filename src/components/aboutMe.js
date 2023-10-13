@@ -13,6 +13,10 @@ function AboutMe() {
                 <div>
                     Hi, I'm <span className="AboutMe__name">Galen</span>! I'm a software engineer living in Berwick ME.
                 </div>
+                <div>
+                    <p>I love to learn and create new things. I'm currently working on a few projects, including this website, and I'm always looking for new opportunities to learn and grow.</p>
+                    <p>When I'm not coding, I enjoy skiing, hiking with my dogs, reading, and most of all spending time with my family.</p>
+                </div>
             </div>
         </div>
     );

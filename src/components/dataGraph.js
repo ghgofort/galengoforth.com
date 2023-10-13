@@ -36,6 +36,7 @@ function DataGraph() {
         const temperatureData = [];
         const labels = [];
         getHPT().then(res => {
+            let lastDateString = '';
             res.reverse().forEach((item) => {
                 const date = new Date((item.dateTimeCreated.seconds * 1000));
                 let time = '';
@@ -54,7 +55,13 @@ function DataGraph() {
                 time = time + ':' + (date.getMinutes() < 10 ? '0' +
                         date.getMinutes() : date.getMinutes()) + ' ' +
                     (isAM ? 'AM' : 'PM');
-                labels.push(date.toDateString() + ' ' + time);
+                const dateString = (date.getMonth() + 1) + '/' + date.getDate() + '/' + date.getFullYear();
+                if (dateString !== lastDateString) {
+                    labels.push(dateString + ' ' + time);
+                    lastDateString = dateString;
+                } else {
+                    labels.push(time);
+                }
                 humidityData.push(item.humidity);
                 pressureData.push(item.pressure_inHg);
                 temperatureData.push(item.temperature_F);
