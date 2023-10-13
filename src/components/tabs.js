@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import './tabs.css';
 import AboutMe from './aboutMe';
+import AboutSite from './aboutSite';
 import DataGraph from './dataGraph';
 import MyResume from './myResume';
 import HPT from './hpt';
@@ -39,6 +40,7 @@ function Tabs() {
             <div className="Tabs__content-container">
                     <div className={selectedTab === 'home' ? 'Tabs__content Tabs__content--home Tabs__content--selected' : 'Tabs__content'}>
                         <AboutMe/>
+                        <AboutSite/>
                     </div>
                     <div className={selectedTab === 'projects' ? 'Tabs__content Tabs__content--projects Tabs__content--selected' : 'Tabs__content'}>
                         <DataGraph/>

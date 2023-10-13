@@ -24,11 +24,6 @@ const getHPT = async () => {
 function DataGraph() {
     const [data, setData] = useState({ humidity: [], pressure: [], temperature: [] });
     const [labels, setLabels] = useState([]);
-    const [checked, setChecked] = useState({
-        humidity: true,
-        pressure: true,
-        temperature: true
-    });
 
     useEffect(() => {
         const humidityData = [];
@@ -55,7 +50,7 @@ function DataGraph() {
                 time = time + ':' + (date.getMinutes() < 10 ? '0' +
                         date.getMinutes() : date.getMinutes()) + ' ' +
                     (isAM ? 'AM' : 'PM');
-                const dateString = (date.getMonth() + 1) + '/' + date.getDate() + '/' + date.getFullYear();
+                const dateString = (date.getMonth() + 1) + '/' + date.getDate();
                 if (dateString !== lastDateString) {
                     labels.push(dateString + ' ' + time);
                     lastDateString = dateString;
@@ -80,13 +75,6 @@ function DataGraph() {
         });
     }, []);
 
-    const handleCheckboxChange = (e) => {
-        const { name, checked } = e.target;
-        setChecked(prevState => ({
-            ...prevState,
-            [name]: checked
-        }));
-    };
 
     const dataGraphOptions = {
         scales: {
@@ -125,52 +113,18 @@ function DataGraph() {
         ]
     };
 
-    if (checked.humidity) {
-        dataGraphData.datasets[0].data = data.humidity;
-    }
-    if (checked.pressure) {
-        dataGraphData.datasets[1].data = data.pressure;
-    }
-    if (checked.temperature) {
-        dataGraphData.datasets[2].data = data.temperature;
-    }
+    dataGraphData.datasets[0].data = data.humidity;
+    dataGraphData.datasets[1].data = data.pressure;
+    dataGraphData.datasets[2].data = data.temperature;
 
     return (
         <div className="dataGraph__component">
             <div className="dataGraph__header">
                 <h2>Humidity, Pressure, & Temperature Readings from Raspberry Pi server.</h2>
             </div>
-            <div className="dataGraph__checkboxes">
-                <label>
-                    <input
-                        name="humidity"
-                        type="checkbox"
-                        checked={checked.humidity}
-                        onChange={handleCheckboxChange}
-                    />
-                    Humidity
-                </label>
-                <label>
-                    <input
-                        name="pressure"
-                        type="checkbox"
-                        checked={checked.pressure}
-                        onChange={handleCheckboxChange}
-                    />
-                    Pressure
-                </label>
-                <label>
-                    <input
-                        name="temperature"
-                        type="checkbox"
-                        checked={checked.temperature}
-                        onChange={handleCheckboxChange}
-                    />
-                    Temperature
-                </label>
-            </div>
             <div className="dataGraph__graph">
-                <Line data={dataGraphData}  options={dataGraphOptions}/>
+                <h3>Last 24 hrs - Temp, Pressure, & Humidity Graph</h3>
+                <Line data={dataGraphData}  options={dataGraphOptions} updateMode="resize"/>
             </div>
         </div>
     );
