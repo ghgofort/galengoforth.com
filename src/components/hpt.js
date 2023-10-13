@@ -28,11 +28,11 @@ function HPT() {
                 <h2>Readings Table - Last 24 hours</h2>
             </div>
                 <div className="hpt__record hpt__record--table-header">
-                    <p className="hpt__slide hpt__slide--col1"><strong>Date: </strong></p>
-                    <p className="hpt__slide hpt__slide--col2"><strong>Time:</strong></p>
-                    <p className="hpt__slide hpt__slide--col3">Humidity:</p>
-                    <p className="hpt__slide hpt__slide--col4">Pressure:</p>
-                    <p className="hpt__slide hpt__slide--col5">Temperature (f):</p>
+                    <p className="hpt__slide hpt__slide--col1"><strong>Date</strong></p>
+                    <p className="hpt__slide hpt__slide--col2"><strong>Time</strong></p>
+                    <p className="hpt__slide hpt__slide--col3">Humidity</p>
+                    <p className="hpt__slide hpt__slide--col4">Pressure</p>
+                    <p className="hpt__slide hpt__slide--col5">Temperature (f)</p>
                 </div>
                 {
                 apiResponse.map((item, index) => {
