@@ -53,8 +53,9 @@ function HPT() {
                     time = time + ':' + (date.getMinutes() < 10 ? '0' +
                         date.getMinutes() : date.getMinutes()) + ' ' +
                         (isAM ? 'AM' : 'PM');
+                        let key = 'hpt_slide' + time + index;
                     return (
-                        <div key={index} className="hpt__record">
+                        <div key={key} className="hpt__record">
                             <p className="hpt__slide hpt__slid--col1">{date.toDateString()}</p>
                             <p className="hpt__slide hpt__slid--col2">{time}</p>
                             <p className="hpt__slide hpt__slid--col3">{String(item.humidity).substring(0, 10)}</p>

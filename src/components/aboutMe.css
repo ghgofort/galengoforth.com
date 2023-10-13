@@ -7,6 +7,10 @@
     width: 100%;
 }
 
+.AboutSite {
+    width: 100%;
+}
+
 .AboutMe__intro {
     margin: 1em;
     text-align: justify;
@@ -46,7 +50,8 @@
     width: 100%;
 
     @media (max-width: 768px) {
-        margin-bottom: 1em;
+        margin-bottom: 1.5em;
+        padding-top: 0;
     }
 }
 
