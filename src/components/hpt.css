@@ -29,16 +29,22 @@
     align-items: flex-start;
     justify-content: flex-start;
     margin: .25em 0;
-    padding: .5em 0;
+    padding: .15em 0;
     text-align: left;
     width: 100%;
+}
+
+.hpt__record--table-header {
+    font-weight: 600;
+    color: #66d9ff;
+    border-top: 1px solid #66aaff;
+    padding: .5em 0
 }
 
 .hpt__slide {
     width: 20%;
     margin: 0;
-    padding: .5em 0;
-    border-top: 1px solid #66aaff;
+    padding: 0 0 .5em 0;
     border-bottom: 1px solid #66aaff;
     line-height: 1em;
     font-size: 12pt;
