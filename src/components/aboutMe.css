@@ -46,7 +46,8 @@
     width: 100%;
 
     @media (max-width: 768px) {
-        margin-bottom: 1em;
+        margin-bottom: 1.5em;
+        padding-top: 0;
     }
 }
 
