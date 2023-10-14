@@ -141,12 +141,12 @@ function DataGraph() {
                 <h2>Humidity, Pressure, & Temperature Readings from Raspberry Pi server.</h2>
             </div>
             <div className="dataGraph__graph">
-                <h3>Last 24 hrs - Temp, Pressure, & Humidity Graph</h3>
-                <Line data={dataGraphData}  options={dataGraphOptions} updateMode="resize"/>
+                <h3>Temp, Pressure, & Humidity Graph</h3>
+                <Line data={dataGraphData} options={dataGraphOptions} updateMode="resize" />
             </div>
             <div className="dataGraph__timeframe">
-            <label htmlFor="numDays">Number of days: </label>
-        <input type="number" id="numDays" name="numDays" min="1" max="30" value={numDays} onChange={handleNumDaysChange} />
+                <label htmlFor="numDays">Number of days: </label>
+                <input type="number" id="numDays" name="numDays" min="1" max="30" value={numDays} onChange={handleNumDaysChange} />
             </div>
         </div>
     );
