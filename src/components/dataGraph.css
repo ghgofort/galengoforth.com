@@ -3,3 +3,15 @@
   max-width: 1080px;
   margin: 0 auto;
 }
+
+.dataGraph__timeframe input {
+  background-color: #332433;
+  border: 2px solid #66aaff;
+  border-radius: 10px;
+  color: #66aaff;
+  font-weight: 800;
+  font-size: 16pt;
+  padding: .5em;
+  text-align: center;
+  margin: 0 1em;
+}
