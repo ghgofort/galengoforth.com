@@ -9,6 +9,12 @@ import { Line } from 'react-chartjs-2';
 import "chart.js/auto";
 import './dataGraph.css';
 
+/**
+ * DataGraph component. This component is responsible for rendering the graph of
+ * the HPT readings from the NodeJS API.
+ * @param {{ apiResponse: any }} props - The API response from the NodeJS API.
+ * @returns - Returns the JSX for the DataGraph component.
+ */
 function DataGraph(props) {
     console.log(props);
     const [humidityData, setHumidityData] = useState([]);
@@ -17,7 +23,7 @@ function DataGraph(props) {
     const [labels, setLabels] = useState([]);
     
     useEffect(() => {
-        // Format the dat for the graph.
+        // Format data for graph.
         let lastDateString = '';
         const hData = [];
         const pData = [];
@@ -79,8 +85,6 @@ function DataGraph(props) {
             }
         ]
     };
-
-
 
     return (
         <div className="dataGraph__component">
