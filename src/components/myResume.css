@@ -62,7 +62,7 @@
 .MyResume__section-selector--sticky {
     position: sticky;
     top: 0;
-    background-color: #cfcfcf;
+    background-color: #fdfdfd;
     border-bottom: 2px solid #1b98bb;
     z-index: 1;
 }
