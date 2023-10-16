@@ -8,10 +8,10 @@
     flex-wrap: wrap;
     align-items: flex-start;
     justify-content: flex-start;
-    margin: 0 1em;
+    margin: 0 auto;
     width: 90%;
     height: 100%;
-    padding: 0 1em 1em 1em;
+    padding-bottom: 1em;
 
     & h1 {
         margin-bottom: 0;
@@ -59,6 +59,14 @@
     }
 }
 
+.MyResume__section-selector--sticky {
+    position: sticky;
+    top: 0;
+    background-color: #cfcfcf;
+    border-bottom: 2px solid #1b98bb;
+    z-index: 1;
+}
+
 .MyResume__section {
     color: #3b254d;
     font-weight: bold;
@@ -73,9 +81,13 @@
     }
 }
 
+.MyResume__content {
+    padding: 1em;
+}
+
 .MyResume__section--selected{
-    color: #81197f;
-    text-decoration: #1b98bb underline 3px;
+    color: #c404c1;
+    text-decoration: #1b98bb underline 2px;
 }
 
 .MyResume__introduction {

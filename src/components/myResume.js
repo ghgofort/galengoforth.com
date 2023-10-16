@@ -3,7 +3,7 @@
  * @module src/components/myResume
  */
 
-import { useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import './myResume.css';
 import itsMe from '../images/itsMe.jpg';
 import sfccArchitect from '../images/sfcc-architect-cert.png';
@@ -11,10 +11,42 @@ import sfccDeveloper from '../images/sfcc-developer-cert.png';
 
 function MyResume() {
     const [currentSection, setCurrentSection] = useState('introduction');
+    const [stickyState, setStickyState] = useState(false);
     const introRef = useRef(null);
     const expRef = useRef(null);
     const eduRef = useRef(null);
     const certRef = useRef(null);
+    const currentRef = useRef(null);
+    
+    const setCurrentSectionOnScroll = useCallback((e) => {
+        console.log('scrolling', e.target);
+        const scrollPosition = window.scrollY;
+        const introPosition = introRef.current.offsetTop;
+        const expPosition = expRef.current.offsetTop;
+        const eduPosition = eduRef.current.offsetTop;
+        const certPosition = certRef.current.offsetTop;
+        const sectionSelectorPosition = currentRef.current.offsetTop;
+
+        if (scrollPosition > sectionSelectorPosition) {
+            setStickyState(true);
+        }
+
+        if (scrollPosition < introPosition) {
+            setCurrentSection('introduction');
+        } else if (scrollPosition < expPosition) {
+            setCurrentSection('experience');
+        } else if (scrollPosition < eduPosition) {
+            setCurrentSection('education');
+        } else if (scrollPosition < certPosition) {
+            setCurrentSection('certifications');
+        }
+    }, []);
+
+    useEffect(() => {
+        window.addEventListener('scroll', setCurrentSectionOnScroll);
+
+        return () => { window.removeEventListener('scroll', setCurrentSectionOnScroll); };
+    }, [setCurrentSectionOnScroll]);
 
     const scrollEffect = (ref) => {
         return () => {
@@ -23,9 +55,10 @@ function MyResume() {
         }
     };
 
+
     return (
         <div className="MyResume__component">
-            <div className="MyResume__section-selector">
+            <div ref={currentRef} className={stickyState ? 'MyResume__section-selector MyResume__section-selector--sticky' : 'MyResume__section-selector'}>
                 <div className={currentSection === 'introduction' ? 'MyResume__section MyResume__section--selected' : 'MyResume__section'} onClick={scrollEffect(introRef)}>
                     <span>Introduction</span>
                 </div>
@@ -44,13 +77,13 @@ function MyResume() {
                 <h3>Software Engineer</h3>
             </div>
             <img className="MyResume__itsMe" src={itsMe} alt="Galen Goforth" />
-            <div className="MyResume__introduction">
+            <div className="MyResume__content MyResume__introduction">
                 <h2>Introduction</h2>
                 <p>Hi, I'm <span className="MyResume__name">Galen Goforth</span>! I'm a software engineer with a passion for learning and creating.</p>
                 <p>I have experience working on a wide variety of projects, from small personal projects to large enterprise level e-commerce websites. I have worked on projects in a variety of languages and frameworks, including JavaScript, ReactJS, NodeJS, Salesforce Commerce Cloud (SFCC), and others.</p>
             </div>
-            <div id="contact" className="MyResume__contact">
-                <h2>Contact</h2>
+            <div id="contact" className="MyResume__content MyResume__contact">
+                <h3>Contact</h3>
                 <ul>
                     <li><p>email: <a href="emailto:galengoforth@gmail.com">galengoforth@gmail.com</a></p></li>
                     <li><p>phone: <span>928-220-5089</span></p></li>
@@ -59,7 +92,7 @@ function MyResume() {
                 </ul>
             </div>
             {/* My Experience Section */}
-            <div id="experience" ref={expRef} className="MyResume__experience">
+            <div id="experience" ref={expRef} className="MyResume__content MyResume__experience">
                 <h2>Experience</h2>
                 <ul>
                     <li>
@@ -126,7 +159,7 @@ function MyResume() {
                 </ul>
             </div>
             {/* My Education Section */}
-            <div id="education" ref={eduRef} className="MyResume__education">
+            <div id="education" ref={eduRef} className="MyResume__content MyResume__education">
                 <h2>Education</h2>
                 <ul>
                     <li>
@@ -147,7 +180,7 @@ function MyResume() {
                 </ul>
             </div>
 
-            <div id="certifications" ref={certRef} className="MyResume__Certifications">
+            <div id="certifications" ref={certRef} className="MyResume__content MyResume__Certifications">
                 <h2>Certifications</h2>
                 <ul>
                     <li><p>Salesforce Commerce Cloud (SFCC) Technical Leadership & Experience</p>
