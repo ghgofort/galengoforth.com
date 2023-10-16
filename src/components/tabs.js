@@ -9,7 +9,6 @@ import RPIWeather from './rpiWeather';
 /**
  * React component that holds tabs for each of the sections of the page.
  * @returns {JSX.Element}
- * @constructor
  */
 function Tabs() {
     let currentTab = window.location.pathname.replaceAll('/', '');

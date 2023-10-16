@@ -1,0 +1,20 @@
+/* RPIWeather component styles */
+.RPIWeather__component {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1080px;
+    margin: 0 auto;
+
+    & h3 {
+        width: 100%;
+    }
+
+    & p {
+        text-align: left;
+    }
+}
+
+.RPIWeather__header {
+    width: 100%;
+    flex-shrink: 0;
+}

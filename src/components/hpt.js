@@ -6,6 +6,12 @@
 import { useState, useEffect } from 'react';
 import './hpt.css';
 
+/**
+ * HPT component. This component is responsible for rendering the table of
+ * HPT readings returned from the NodeJS API.
+ * @param {{ apiResponse: any }} props - The API response from the NodeJS API.
+ * @returns - Returns the JSX for the HPT component.
+ */
 function HPT(props) {
     const [apiResponse, setApiResponse] = useState([]);
     useEffect(() => { 

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import DataGraph from './dataGraph';
 import HPT from './hpt';
+import './rpiWeather.css';
 
 const getHPT = async (params) => {
     let url = 'https://pi-services.vercel.app/hpt';
@@ -69,10 +70,8 @@ function RPIWeather() {
     };
 
     useEffect(() => {
-        console.log('numDays: ', numDays);
         getHPT({ count: (numDays * 24) }).then(res => {
             let apiData = [];
-            console.log('response: ', res);
             res.forEach((item) => {
                 const date = new Date((item.dateTimeCreated.seconds * 1000));
                 const dateString = formatDateString(date);
@@ -91,6 +90,10 @@ function RPIWeather() {
 
     return (
         <div className="RPIWeather__component">
+            <div className="RPIWeather__header">
+                <h3>Raspberry Pi Weather</h3>
+                <p>Here you can find the humidity, pressure, & temperature readings from my Raspberry Pi weather station. The data is collected every hour and stored in a Firestore database. The data is then pulled from the database and displayed here using a NodeJS API.</p>
+            </div>
             <div className="dataGraph__timeframe">
                 <label htmlFor="numDays">Number of days: </label>
                 <input type="number" id="numDays" name="numDays" min="1" max="7" value={numDays} onChange={handleNumDaysChange} />
