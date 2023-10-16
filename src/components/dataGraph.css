@@ -2,6 +2,15 @@
 .dataGraph__component {
   max-width: 1080px;
   margin: 0 auto;
+  width: 87.5%;
+}
+
+.dataGraph__timeframe {
+  width: 10%;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 }
 
 .dataGraph__timeframe input {
@@ -11,7 +20,13 @@
   color: #66aaff;
   font-weight: 800;
   font-size: 16pt;
+  height: 2em;
   padding: .5em;
   text-align: center;
-  margin: 0 1em;
+  margin: 1em 1em;
+
+  @media (max-width: 768px) {
+    width: 30%;
+    height: 1.5em;
+  }
 }
