@@ -16,7 +16,6 @@ import './dataGraph.css';
  * @returns - Returns the JSX for the DataGraph component.
  */
 function DataGraph(props) {
-    console.log(props);
     const [humidityData, setHumidityData] = useState([]);
     const [temperatureData, setTemperatureData] = useState([]);
     const [pressureData, setPressureData] = useState([]);

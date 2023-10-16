@@ -1,0 +1,9 @@
+/* RPIWeather component styles */
+.RPIWeather__component {
+  max-width: 1080px;
+  margin: 0 auto;
+
+  & p {
+    text-align: left;
+  }
+}
