@@ -18,7 +18,6 @@ const getHPT = async (params) => {
         throw Error(body.message);
     }
     return body;
-
 };
 
 /**

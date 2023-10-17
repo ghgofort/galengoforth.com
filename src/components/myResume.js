@@ -9,6 +9,22 @@ import itsMe from '../images/itsMe.jpg';
 import sfccArchitect from '../images/sfcc-architect-cert.png';
 import sfccDeveloper from '../images/sfcc-developer-cert.png';
 
+
+/**
+ * Gets the job experience data from the firestore database.
+ * @returns {Object} The job experience data from the firestore database.
+ */
+const getJobExperience = async () => {
+    const url = 'https://pi-services.vercel.app/job_experiences';
+    const response = await fetch(url);
+    const body = await response.json();
+
+    if (response.status !== 200) {
+        throw Error(body.message);
+    }
+    return body;
+};
+
 function MyResume() {
     const [currentSection, setCurrentSection] = useState('introduction');
     const [stickyState, setStickyState] = useState(false);
@@ -40,6 +56,14 @@ function MyResume() {
         } else if (scrollPosition < certPosition) {
             setCurrentSection('certifications');
         }
+    }, []);
+
+    useEffect(() => {
+        getJobExperience().then((res) => {
+            console.log(res);
+        }).catch((err) => {
+            console.log(err);
+        });
     }, []);
 
     useEffect(() => {
