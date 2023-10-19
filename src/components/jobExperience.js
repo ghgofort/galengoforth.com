@@ -6,9 +6,11 @@
 import './jobExperience.css';
 
 /**
- * 
- * @param {{ expData: Object,}} props 
- * @returns 
+ * Job experience component that represnts a job or education experience that is
+ * relevant to my career.
+ * @param {{ expData: Object,}} props - The props object that contains the job
+ *      description & any highlights that are relevant to the job.
+ * @returns {JSX.Element} - returns the JSX for the job experience component.
  */
 const JobExperience = (props) => {
     return (
