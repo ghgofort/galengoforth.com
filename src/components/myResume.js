@@ -8,10 +8,28 @@ import './myResume.css';
 import itsMe from '../images/itsMe.jpg';
 import sfccArchitect from '../images/sfcc-architect-cert.png';
 import sfccDeveloper from '../images/sfcc-developer-cert.png';
+import JobExperience from './jobExperience';
+
+
+/**
+ * Gets the job experience data from the firestore database.
+ * @returns {Object} The job experience data from the firestore database.
+ */
+const getJobExperience = async () => {
+    const url = 'https://pi-services.vercel.app/job_experience';
+    const response = await fetch(url);
+    const body = await response.json();
+
+    if (response.status !== 200) {
+        throw Error(body.message);
+    }
+    return body;
+};
 
 function MyResume() {
     const [currentSection, setCurrentSection] = useState('introduction');
     const [stickyState, setStickyState] = useState(false);
+    const [jobExperience, setJobExperience] = useState([]);
     const introRef = useRef(null);
     const expRef = useRef(null);
     const eduRef = useRef(null);
@@ -40,6 +58,14 @@ function MyResume() {
         } else if (scrollPosition < certPosition) {
             setCurrentSection('certifications');
         }
+    }, []);
+
+    useEffect(() => {
+        getJobExperience().then((res) => {
+            setJobExperience(res);
+        }).catch((err) => {
+            console.log(err);
+        });
     }, []);
 
     useEffect(() => {
@@ -94,7 +120,13 @@ function MyResume() {
             {/* My Experience Section */}
             <div id="experience" ref={expRef} className="MyResume__content MyResume__experience">
                 <h2>Experience</h2>
-                <ul>
+                {jobExperience.map((job, index) => {
+                    let key = index;
+                    return (
+                        <JobExperience key={key} expData={job}/>
+                    );
+                })}
+                {/* <ul>
                     <li>
                         <h3>Senior Salesforce Commerce Cloud Developer</h3>
                         <p>RafterOne (formerly PixelMEDIA) - Portsmouth, NH | (May 2022 - August 2023)</p>
@@ -156,7 +188,7 @@ function MyResume() {
                             <li>Created reports utilizing Excel with VBA, SQL, & Crystal Reports to access & display pertinent health record summary data.</li>
                         </ul>
                     </li>
-                </ul>
+                </ul> */}
             </div>
             {/* My Education Section */}
             <div id="education" ref={eduRef} className="MyResume__content MyResume__education">
