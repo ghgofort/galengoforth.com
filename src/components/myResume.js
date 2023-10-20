@@ -37,7 +37,6 @@ function MyResume() {
     const currentRef = useRef(null);
     
     const setCurrentSectionOnScroll = useCallback((e) => {
-        console.log('scrolling', e.target);
         const scrollPosition = window.scrollY;
         const introPosition = introRef.current.offsetTop;
         const expPosition = expRef.current.offsetTop;
