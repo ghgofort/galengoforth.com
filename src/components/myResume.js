@@ -84,7 +84,6 @@ function MyResume() {
         }
     };
 
-
     return (
         <div className="MyResume__component">
             <div ref={currentRef} className={stickyState ? 'MyResume__section-selector MyResume__section-selector--sticky' : 'MyResume__section-selector'}>
@@ -124,7 +123,7 @@ function MyResume() {
             {/* My Experience Section */}
             <div id="experience" ref={expRef} className="MyResume__content MyResume__experience">
                 <h2>Experience</h2>
-                {jobExperiences.length > 0 ? jobExperiences.map((jobExperience, index) => { return <JobExperience key={index} expData={jobExperience} />; }) : <p>Loading...</p>}
+                {jobExperiences.length > 0 ? jobExperiences.map((jobExperience, index) => { return <JobExperience key={'jobExp'} expData={jobExperience} />; }) : <p>Loading...</p>}
             </div>
 
             {/* My Education Section */}
