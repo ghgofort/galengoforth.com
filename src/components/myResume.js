@@ -123,7 +123,7 @@ function MyResume() {
             {/* My Experience Section */}
             <div id="experience" ref={expRef} className="MyResume__content MyResume__experience">
                 <h2>Experience</h2>
-                {jobExperiences.length > 0 ? jobExperiences.map((jobExperience, index) => { return <JobExperience key={'jobExp'} expData={jobExperience} />; }) : <p>Loading...</p>}
+                {jobExperiences.length > 0 ? jobExperiences.map((jobExperience, index) => { return <JobExperience key={index.toString()} expData={jobExperience} />; }) : <p>Loading...</p>}
             </div>
 
             {/* My Education Section */}
