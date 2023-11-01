@@ -1,4 +1,43 @@
 /* Styles for JobExperience component. */
 .job-experience__component {
-    width: 100%;
+    background-color: #112233;
+    border-radius: 30px;
+    color: #d4fffe;
+    padding: 1em 5%;
+    margin-bottom: 1.5em;
+    width: 90%;
+
+    & h3 {
+        color: #a5fef8;
+        font-size: 1.3rem;
+        font-weight: 700;
+        margin: .5rem 0;
+        padding: 0;
+    }
+    
+    & h4 {
+        color: #ffcc00;
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin: .15rem 0;
+        padding: 0;
+    }
+    & h5 {
+        color: #ffcc8a;
+        font-size: .8rem;
+        font-weight: 500;
+        margin: .15rem 0;
+        padding: 0;
+    }
+    & p {
+        font-size: .8rem;
+        font-weight: 400;
+        margin: .25rem 0;
+        padding: 0;
+    }
+
+    & ul, & li {
+        margin-bottom: .25rem;
+        margin-top: .35rem;
+    }
 }

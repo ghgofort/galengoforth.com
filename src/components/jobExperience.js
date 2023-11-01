@@ -17,19 +17,20 @@ const JobExperience = (props) => {
         <div className="job-experience__component">
             <h3>{props.expData.title}</h3>
             <h4>{props.expData.companyName}</h4>
-            <h5>{props.expData.companyCity + ', ' + props.expData.companyState}</h5>
-            <h5>{props.expData.startDateMonth + '/' + props.expData.startDateYear + ' - ' + props.expData.endDateMonth + '/' + props.expData.endDateYear}</h5>
+            <h5>{props.expData.companyCity + ', ' + props.expData.companyState} | {props.expData.startDateMonth + '/' + props.expData.startDateYear + ' - ' + props.expData.endDateMonth + '/' + props.expData.endDateYear}</h5>
             <p>{props.expData.description}</p>
             <div className="job-experience__component__examples">
+                <ul>
                 {props.expData.highlights.map((highlight, index) => {
                     let key = index;
                     return (
-                        <div key={key} className="job-experience__component__highlight">
-                            <img src={highlight.img} alt={highlight.alt} />
+                        <li key={key} className="job-experience__component__highlight">
+                            {highlight.img && <img src={highlight.img} alt={highlight.alt} />}
                             <p>{highlight.description}</p>
-                        </div>
+                        </li>
                     );
                 })}
+                </ul>
             </div>
         </div>
     );
