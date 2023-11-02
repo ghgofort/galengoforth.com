@@ -51,7 +51,7 @@ function DataGraph(props) {
     const dataGraphOptions = {
         scales: {
             y: {
-                beginAtZero: true
+                beginAtZero: false
             }
         },
         responsive: true,
