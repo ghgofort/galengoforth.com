@@ -45,6 +45,10 @@
         margin-top: 1.75em;
         margin-left: 1em;
         margin-bottom: 0;
+
+        @media (max-width: 768px) {
+            margin: 0;
+        }
     }
 }
 
@@ -125,8 +129,36 @@
 }
 
 .MyResume__contact {
+    background-color: #112233;
+    border-radius: 30px;
+    color: #fdfdfd;
+    margin: 1em;
+
     & h3 {
-        margin-top: 0;
+        color: #a5fef8;
+        font-size: 1.3rem;
+        font-weight: 700;
+        margin: .5rem 0;
+        padding: 0;
+    }
+
+    & p {
+        font-size: .8rem;
+        font-weight: 500;
+        margin: .25rem 0;
+        padding: 0;
+    }
+
+    & ul, & li {
+        margin-bottom: .25rem;
+        margin-top: .35rem;
+    }
+
+    & a {
+        color: #fc34ff;
+        letter-spacing: .05rem;
+        text-decoration: underline #fdfdfd;
+        text-decoration-thickness: .05rem;
     }
 }
 

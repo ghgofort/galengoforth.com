@@ -13,6 +13,7 @@ import './dataGraph.css';
  * DataGraph component. This component is responsible for rendering the graph of
  * the HPT readings from the NodeJS API.
  * @param {{ apiResponse: any }} props - The API response from the NodeJS API.
+ * @param {any[]} props.apiResponse - The API response from the NodeJS API.
  * @returns - Returns the JSX for the DataGraph component.
  */
 function DataGraph(props) {
