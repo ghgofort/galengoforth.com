@@ -99,12 +99,15 @@
         margin-top: 0;
     }
     
+    @media (max-width: 1260px) {
+        max-width: 70%;
+    }
+    @media (max-width: 1080px) {
+        max-width: 65%;
+    }
     @media (max-width: 768px) {
         margin: 0;
         max-width: 100%;
-    }
-    @media (max-width: 1260px) {
-        max-width: 65%;
     }
 }
 
@@ -122,9 +125,6 @@
 }
 
 .MyResume__contact {
-    max-width: 75%;
-    margin-right: 2em;
-
     & h3 {
         margin-top: 0;
     }
