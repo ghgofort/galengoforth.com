@@ -114,7 +114,7 @@ function MyResume() {
                 <h3>Contact</h3>
                 <ul>
                     <li><p>email: <a href="emailto:galengoforth@gmail.com">galengoforth@gmail.com</a></p></li>
-                    <li><p>phone: <span>928-220-5089</span></p></li>
+                    <li><p>phone: <a href="tel:9282205089">928-220-5089</a></p></li>
                     <li><p>github: <a href="https://github.com/ghgoforth">github.com/ghgoforth</a></p></li>
                     <li><p>linkedin: <a href="https://www.linkedin.com/in/galen-goforth-87784442/">https://www.linkedin.com/in/galen-goforth-87784442/</a></p></li>
                 </ul>
@@ -123,7 +123,7 @@ function MyResume() {
             {/* My Experience Section */}
             <div id="experience" ref={expRef} className="MyResume__content MyResume__experience">
                 <h2>Experience</h2>
-                {jobExperiences.length > 0 ? jobExperiences.map((jobExperience, index) => { return <JobExperience key={index.toString()} expData={jobExperience} />; }) : <p>Loading...</p>}
+                {jobExperiences.length > 0 ? jobExperiences.map((jobExperience, index) => { return <JobExperience key={jobExperience.ID} expData={jobExperience} />; }) : <p>Loading...</p>}
             </div>
 
             {/* My Education Section */}
