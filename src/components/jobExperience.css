@@ -1,6 +1,7 @@
 /* Styles for JobExperience component. */
 .job-experience__component {
     background-color: #112233;
+    border: 2px solid #1b98bb;
     border-radius: 30px;
     color: #d4fffe;
     padding: 1em 5%;
